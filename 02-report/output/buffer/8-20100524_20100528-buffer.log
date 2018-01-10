@@ -1,0 +1,4 @@
+Reading 22041638939 characters... all characters read successfully.
+date,volume
+total_msgs,read_time,search_kmp,search_time,volume_time
+0,53.1138,155.799,0.0375341,2.0207e-05

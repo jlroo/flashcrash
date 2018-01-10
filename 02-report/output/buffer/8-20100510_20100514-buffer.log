@@ -1,0 +1,10 @@
+Reading 24449455107 characters... all characters read successfully.
+date,volume
+20100509,159929
+20100510,9708445
+20100511,8742538
+20100512,7283206
+20100513,7143218
+20100514,10555854
+total_msgs,read_time,search_kmp,search_time,volume_time
+43593190,60.659,175.059,7.90872,0.460015

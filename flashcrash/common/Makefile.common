@@ -1,0 +1,23 @@
+COMMON_OBJS = my_timer.o
+COMMON_DEPS = $(COMMON_OBJS:.o=.d)
+COMMON_LIBS = -lrt
+
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Darwin)
+	COMMON_LIBS=""
+else
+	COMMON_LIBS=-lrt
+endif
+
+-include $(COMMON_DEPS)
+
+my_timer.o:
+	$(CXX) $(CXXFLAGS) -c $(COMMON)/my_timer.cpp -o my_timer.o
+	$(CXX) -MM $(CXXFLAGS) $(COMMON)/my_timer.cpp > my_timer.d
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $<
+	$(CXX) -MM $(CXXFLAGS) $< > $*.d
+
+clean_common:
+	/bin/rm -fv $(COMMON_OBJS) $(COMMON_DEPS)
